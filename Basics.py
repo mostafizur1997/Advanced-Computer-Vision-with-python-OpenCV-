@@ -15,8 +15,12 @@ while True:
     results = hands.process(imgRGB)
     print(results.multi_hand_landmarks)
     
-    #muliple hands extract each hand one by one
-     
+    # if multi_hand_landmarks is True
+    if results.multi_hand_landmarks:
+        #muliple hands extract each hand one by one
+        for handLMS in results.multi_hand_landmarks:
+            
+            
     
     
 

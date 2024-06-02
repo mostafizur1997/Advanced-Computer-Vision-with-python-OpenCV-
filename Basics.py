@@ -7,6 +7,8 @@ cap = cv2.VideoCapture(0)
 mpHands = mp.solutions.hands
 # create a hands object
 hands = mpHands.Hands()
+mpDraw = mp.solutions.drawing_utils
+
 
 while True:
     success, img = cap.read()
@@ -19,6 +21,7 @@ while True:
     if results.multi_hand_landmarks:
         #muliple hands extract each hand one by one
         for handLMS in results.multi_hand_landmarks:
+            mpDraw.draw_landmarks(img, handLMS)
             
             
     

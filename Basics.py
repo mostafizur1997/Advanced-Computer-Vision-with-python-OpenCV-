@@ -7,7 +7,7 @@ cap = cv2.VideoCaptures(1)
 
 
 while True:
-    
+
     
 
 cv2.imshow("Image", img)

@@ -5,10 +5,20 @@ import time
 # For frame number 1
 cap = cv2.VideoCapture(0)
 mpHands = mp.solutions.hands
+# create a hands object
 hands = mpHands.Hands()
 
 while True:
     success, img = cap.read()
+    # hands object only works with RGB images
+    imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    results = hands.process(imgRGB)
+    print(results.multi_hand_landmarks)
+    
+    #muliple hands extract each hand one by one
+     
+    
+    
 
     
 
